@@ -1,0 +1,40 @@
+#Ivette Carino
+#CSI31 - Assignment 3
+#10/15/2018
+
+
+def main():
+    #open the input file and read the lines into a list
+    infile = open("C:\\Users\\ivette.carino\\Desktop\\names20.txt", 'r')
+    thenames = infile.readlines()
+    infile.close()
+
+    #open the output file
+    outfile = open("C:\\Users\\ivette.carino\\Desktop\\users1.txt", 'w')
+
+    for each in thenames:
+        first, last, futurevalue, year, rate = each.split() 
+        name = first + " " + last    
+        
+        print("Report on the investment of", name, file = outfile)
+        print("The desired final value will be", futurevalue, "after being invested for", year,
+              "years on a", rate, "interest rate", file = outfile)
+        
+        
+        deposit=int(futurevalue)
+
+        for k in range (int(year)):
+            deposit=deposit/(1 + float(rate))
+
+        for i in range(int(year)):
+            deposit=deposit*(1+float(rate))
+            print("After ", str(i+1), "year(s) your value will be ", deposit, file=outfile)
+            
+
+       
+
+    outfile.close()
+
+main()
+            
+
