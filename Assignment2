@@ -1,0 +1,39 @@
+#Ivette Carino
+#CSI 31: Assignment 2, Part II
+#10/01/2018
+
+
+from graphics import *
+
+def main():
+    w = GraphWin("Colored circle", 450,400)
+    t=Text(Point(225,15),"Enter RGB numbers & click to create a circle with color of choice.").draw(w)
+
+    rtext=Text(Point(225,50),"Red:").draw(w)
+    inputText=Entry(Point(285,50),7)
+    inputText.setText("0")
+    inputText.draw(w)
+    
+    btext=Text(Point(225,70),"Blue:").draw(w)
+    inputText2=Entry(Point(285,70),7)
+    inputText2.setText("0")
+    inputText2.draw(w)
+    
+    gtext=Text(Point(225,90),"Green:").draw(w)
+    inputText3=Entry(Point(285,90),7)
+    inputText3.setText("0")
+    inputText3.draw(w)
+    
+    
+    p1 = w.getMouse()
+    c1 = Circle(p1,90)
+    r=inputText.getText()
+    g=inputText2.getText()
+    b=inputText3.getText()
+
+    c1.setFill(color_rgb(int(r),int(b),int(g)))
+    c1.draw(w)
+
+
+main()
+
