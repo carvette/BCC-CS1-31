@@ -1,0 +1,18 @@
+#Ivette Carino
+#CSI 31: Assignment 1
+#10/19/2018
+
+
+def main():
+    print("This program computes the present value needed to reach a final value based on the desired interest rate and time period. It will then demonstrate, or print, the investment value after each year.")
+    value=eval(input("Enter target money value after investment period:"))
+    years=eval(input("Enter length of investment period, in years:"))
+    rate=eval(input("Enter annual interest rate:"))
+    deposit=value
+    for k in range (int(years)):
+        deposit=deposit/(1+(rate/100))
+    print("The present value of your investment is " + str(deposit))
+
+    for k in range (int(years)):
+        deposit=deposit*(1+(rate/100))
+        print("After " + str(k+1)+ " years your value will be " + str(deposit))
