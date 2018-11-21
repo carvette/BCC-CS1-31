@@ -1,0 +1,42 @@
+#Ivette Carino
+#Assignment4
+#11.5.2018
+
+from graphics import *
+
+
+def drawSmiley(center, size, win):
+
+    face = Circle(Point(0,0), size)
+    lefteye = Circle(Point(-.5*size,.5*size), size*.1)  
+    righteye = Circle(Point(.5*size,.5*size), size*.1)
+    mouth = Line(Point(-.4*size,-.5*size), Point(.4*size,-.5*size))
+
+
+    dx = center.getX()
+    dy = center.getY()
+
+    face.move(dx,dy)
+    face.draw(win)
+
+    lefteye.move(dx,dy)
+    lefteye.draw(win)
+
+    righteye.move(dx,dy)
+    righteye.draw(win)
+
+    mouth.move(dx,dy)
+    mouth.draw(win)
+    
+
+def main():
+    w = GraphWin("Smiley",500,500)
+    w.setCoords(-500,-500,500,500)
+    
+    for i in range(10):
+        q=w.getMouse()
+        drawSmiley(q,100,w)
+
+    
+main()
+
