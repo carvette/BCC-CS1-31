@@ -1,1 +1,25 @@
+#Ivette Carino
+#CSI31 Assignment 5
+
+def main():
+    name = input("Enter student name:")
+    credit = int(input("Enter number of credits:"))
+
+    if credit <= 27:
+        print(name + " is a Freshman.")
+
+    elif 28 <= credit <= 55:
+        print(name + " is a Sophomore.")
+
+    elif 56 <= credit <= 87:
+        print(name + " is a Junior.")
+
+    else:
+        print(name + " is a Senior.")
+    
+
+
+
+main()
+        
 
